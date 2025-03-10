@@ -19,7 +19,7 @@ namespace Infrastructure.Repositories
             _context = context;
         }
         public async Task<Guid> AddNewTaskAsync(TaskModel task)
-        {  task.User= await _context.Users.FirstOrDefaultAsync(u => u.Id == task.UserId);
+        {   task.User= await _context.Users.FirstOrDefaultAsync(u => u.Id == task.UserId);
             await _context.Tasks.AddAsync(task);
             await _context.SaveChangesAsync();
             return task.Id;

@@ -7,9 +7,9 @@ using TaskManager.Models;
 
 namespace Core.Abstractions
 {
-   public interface IUserRepository
+    public interface IUserService
     {
-       Task<UserModel> GetUserById(Guid userId);
-       Task CreateNewUser(UserModel model);
+        Task CreateUser(string firstName, string lastName, string email, string passwordHash);
+        Task<UserModel> GetUserById(Guid id);
     }
 }
