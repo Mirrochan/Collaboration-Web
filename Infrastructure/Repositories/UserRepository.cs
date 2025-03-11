@@ -22,6 +22,13 @@ namespace Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<UserModel> GetUserByEmail(string email)
+        {
+            UserModel model = await _context.Users.Where(u => u.Email == email).FirstOrDefaultAsync();
+            return model;
+        
+        }
+
         public async Task<UserModel> GetUserById(Guid userId)
         {
             UserModel model = await _context.Users.Where(u => u.Id == userId).Select(u => u.Create(u.FirstName, u.LastName, u.Email, u.PasswordHash)).FirstOrDefaultAsync();

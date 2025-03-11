@@ -11,5 +11,6 @@ namespace Core.Abstractions
     {
        Task<UserModel> GetUserById(Guid userId);
        Task CreateNewUser(UserModel model);
+        Task<UserModel> GetUserByEmail(string email); 
     }
 }

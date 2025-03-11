@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public class PasswordHasher
+    public class PasswordHasher : IPasswordHasher
     {
         public string Generate(string password) =>
             BCrypt.Net.BCrypt.EnhancedHashPassword(password);///хешує генерує пароль
         public bool Verify(string password, string hashPassword) =>
-            BCrypt.Net.BCrypt.EnhancedVerify(password,hashPassword); ////перевіряє
+            BCrypt.Net.BCrypt.EnhancedVerify(password, hashPassword); ////перевіряє
     }
 }

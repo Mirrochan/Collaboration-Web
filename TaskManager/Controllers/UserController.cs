@@ -22,5 +22,11 @@ namespace TaskManager.Controllers
             var user = await _userService.GetUserById(id);
            return Ok(user);
         }
+
+        public async Task<IActionResult> Login(IUserService service, UserLoginReguest reguest)
+        {
+            var token = await service.Login(reguest.email, reguest.password);
+            return Ok(token);
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace Core.Abstractions
     {
         Task CreateUser(string firstName, string lastName, string email, string passwordHash);
         Task<UserModel> GetUserById(Guid id);
+        Task<string> Login(string email, string password);
     }
 }
