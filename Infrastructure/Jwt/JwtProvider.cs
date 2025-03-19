@@ -9,7 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Options;
 using System.Security.Claims;
 
-namespace Infrastructure
+namespace Infrastructure.Jwt
 {
     public class JwtProvider(IOptions<JwtOptions> options) : IJwtProvider
     {

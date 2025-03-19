@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure
+namespace Infrastructure.Jwt
 {
     public class JwtOptions
-    { public string SecretKey { get; set; }
+    {
+        public string SecretKey { get; set; }
         public int ExpiresHours { get; set; }
     }
 }

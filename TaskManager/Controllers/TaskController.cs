@@ -1,4 +1,5 @@
 ﻿using Core.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskManager.Contracts;
 using TaskManager.Models;
@@ -14,7 +15,7 @@ namespace TaskManager.Controllers
         {
             _taskService = taskService;
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
